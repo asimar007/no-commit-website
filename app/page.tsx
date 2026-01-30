@@ -17,10 +17,13 @@ import {
 import { InstallCommand } from "@/components/install-command";
 import { NpmDownloads } from "@/components/npm-downloads";
 import { Logo } from "@/components/logo";
+import { getLatestVersion } from "@/lib/npm";
 
 import type { Route } from "next";
 
-export default function Page() {
+export default async function Page() {
+  const latestVersion = await getLatestVersion();
+
   const variants = {
     initial: { opacity: 0, filter: "blur(8px)", y: 20 },
     animate: { opacity: 1, filter: "blur(0px)", y: 0 },
@@ -98,8 +101,8 @@ export default function Page() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <span className="bg-primary/10 text-primary inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs">
-              <HugeiconsIcon icon={SparklesIcon} className="size-3" />
-              v0.0.4 is out
+              <HugeiconsIcon icon={SparklesIcon} className="size-3" />v
+              {latestVersion} is out
             </span>
           </motion.div>
 
