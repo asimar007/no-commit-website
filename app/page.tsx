@@ -150,12 +150,6 @@ export default function Page() {
               Get Started
               <HugeiconsIcon icon={ArrowRight01Icon} className="size-4" />
             </Link>
-            <Link
-              href="https://github.com/asimar007/no-commit"
-              className="text-muted-foreground hover:text-foreground hover:bg-muted inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors"
-            >
-              View on GitHub
-            </Link>
           </motion.div>
         </div>
 
